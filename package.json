@@ -1,11 +1,12 @@
 {
   "name": "faq-mars",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
+  "style": "dist/Faq.css",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,5 +38,9 @@
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.27.1",
+    "@babel/runtime-corejs3": "^7.27.1"
   }
 }

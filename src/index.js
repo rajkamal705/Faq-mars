@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FaqItem from './FaqItem';
-import './Faq.css';
+import './Faq.css'
 
 const Faq = ({ items, className, itemClassName, questionClassName, answerClassName }) => {
   return (

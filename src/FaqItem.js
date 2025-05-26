@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Faq.css';
 
 const FaqItem = ({ question, answer, className, itemClassName, questionClassName, answerClassName }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +23,15 @@ const FaqItem = ({ question, answer, className, itemClassName, questionClassName
       )}
     </div>
   );
+};
+
+FaqItem.propTypes = {
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  className: PropTypes.string,
+  itemClassName: PropTypes.string,
+  questionClassName: PropTypes.string,
+  answerClassName: PropTypes.string
 };
 
 export default FaqItem;

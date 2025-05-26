@@ -28,19 +28,26 @@ export default {
       include: /node_modules/
     }),
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       presets: [
         ['@babel/preset-react', {
           runtime: 'automatic'
         }],
         '@babel/preset-env'
+      ],
+      plugins: [
+        ['@babel/plugin-transform-runtime', {
+          corejs: 3,
+          version: "^7.24.5"
+        }]
       ]
     }),
     postcss({
-      modules: true,
-      extract: true,
+      modules: false,
+      extract: 'Faq.css', // Changed from true to false
       minimize: true,
+      // inject: true,
       plugins: [
         require('autoprefixer')(),
         require('cssnano')()

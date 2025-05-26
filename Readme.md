@@ -1,26 +1,34 @@
-# React FAQ Component
+# React FAQ Component 🌌
 
-A customizable, accessible FAQ/accordion component for React applications.
+A customizable, accessible FAQ/accordion component for React applications with built-in styling.
 
-![FAQ Component Preview](https://via.placeholder.com/800x400.png?text=FAQ+Component+Preview)
+![FAQ Component Preview](https://via.placeholder.com/800x400.png?text=FAQ+Component+Preview+with+Styles)
 
-## Features
+## Features ✨
 
-- 🎨 Customizable through CSS classes and CSS variables
+- 🎨 **Auto-included CSS** with zero-config styling
 - ♿ Built with accessibility (ARIA) support
-- 🌀 Smooth animations and transitions
-- 📦 Zero external dependencies (except React)
-- 🌐 PropTypes validation
-- 🧩 Supports both CommonJS and ES Modules
+- 🌀 Smooth fade-in animations and toggle transitions
+- 📦 **No CSS imports needed** - styles bundled automatically
+- 🌐 PropTypes validation with error warnings
+- 🧩 Dual module support (CJS + ESM)
+- 🛠️ CSS Variables for easy theme customization
 
-## Installation
+## Installation 📦
 
 ```bash
 npm install faq-mars
 
-##### usage:
+## Peer Dependencies ⚙️
+## Ensure these are installed in your host project:
+
+bash
+npm install react react-dom prop-types
+
+##### basic usage:
 import React from 'react';
 import Faq from 'faq-mars';
+import 'faq-mars/dist/Faq.css';
 
 const App = () => {
   const faqItems = [
@@ -43,51 +51,47 @@ const App = () => {
 };
 
 
-## Peer Dependencies
-## Make sure you have these installed in your project:
-
-bash:
-npm install react react-dom prop-types
-
-![Example Image](/props.png)
-
-
 ## Customization
 1. Using CSS Classes
 javascript
 
 <Faq
   items={items}
-  className="faq-container"
-  itemClassName="faq-item"
-  questionClassName="faq-question"
-  answerClassName="faq-answer"
+  className="custom-container"
+  itemClassName="custom-item"
+  questionClassName="custom-question"
+  answerClassName="custom-answer"
 />
 
 
-# 2. Using CSS Variables
-css
+# 2. CSS Variables theming
+/* In your global CSS */
 .faq-container {
   --faq-border-color: #e0e0e0;
   --faq-bg-color: #f8f8f8;
   --faq-hover-bg: #f0f0f0;
   --faq-text-color: #333;
   --faq-transition-speed: 0.3s;
+  --faq-border-radius: 8px;
 }
 
 # 3. Custom CSS
-css
 /* Custom question style */
 .custom-question {
-  background-color: #007bff;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-radius: 8px;
+  font-family: 'Comic Sans MS', cursive;
 }
 
 /* Custom answer animation */
 .custom-answer {
-  transition: height 0.3s ease-out;
+  background: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+License 📄
+MIT © raj kamal
 
 
 
